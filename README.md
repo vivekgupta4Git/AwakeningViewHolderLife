@@ -1,4 +1,5 @@
-# AwakeningViewHolderLife
+# AwakeningViewHolderLife [![](https://jitpack.io/v/vivekgupta4Git/AwakeningViewHolderLife.svg)](https://jitpack.io/#vivekgupta4Git/AwakeningViewHolderLife)
+
 A Library to make viewholder aware of its lifecycle.
 
 Getting Started
