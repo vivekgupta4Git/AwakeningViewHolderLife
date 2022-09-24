@@ -58,9 +58,6 @@ abstract class LifeAwareViewHolder(v : View): RecyclerView.ViewHolder(v), Lifecy
         //destroy previous lifecycle
         lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY)
         viewModelStore.clear()
-        //as View gets recycled, getting it ready for next use
-        makeLifeCycle()
-        createViewModelStore()
     }
 
     /**
