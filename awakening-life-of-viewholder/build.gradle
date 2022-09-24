@@ -6,7 +6,12 @@ plugins {
 
 android {
     compileSdk 32
-
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
     defaultConfig {
         minSdk 21
         targetSdk 32
