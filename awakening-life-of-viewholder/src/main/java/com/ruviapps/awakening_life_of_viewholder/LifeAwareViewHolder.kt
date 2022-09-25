@@ -1,5 +1,6 @@
 package com.ruviapps.awakening_life_of_viewholder
 
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.*
 import androidx.recyclerview.widget.RecyclerView
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 abstract class LifeAwareViewHolder(v : View): RecyclerView.ViewHolder(v), LifecycleOwner, ViewModelStoreOwner {
    private lateinit var lifecycleRegistry : LifecycleRegistry
    private lateinit var viewModelStore: ViewModelStore
+    private var isRecycled = false
 
    init {
        makeLifeCycle()
@@ -17,9 +19,9 @@ abstract class LifeAwareViewHolder(v : View): RecyclerView.ViewHolder(v), Lifecy
      * Register a lifecycle entry
      */
     private fun makeLifeCycle(){
-       lifecycleRegistry = LifecycleRegistry(this)
-       lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_CREATE)
-   }
+            lifecycleRegistry = LifecycleRegistry(this)
+            lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_CREATE)
+          }
 
     /**
      * Register a ViewModelStore of its own
@@ -58,8 +60,9 @@ abstract class LifeAwareViewHolder(v : View): RecyclerView.ViewHolder(v), Lifecy
         //destroy previous lifecycle
         lifecycleRegistry.handleLifecycleEvent(Lifecycle.Event.ON_DESTROY)
         viewModelStore.clear()
-        //as View gets recycled, getting it ready for next use
+
         makeLifeCycle()
+        createViewModelStore()
 
     }
 
