@@ -20,7 +20,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.vivekgupta4Git:AwakeningViewHolderLife:1.0.1'
+	        implementation 'com.github.vivekgupta4Git:AwakeningViewHolderLife:1.0.5'
 	}
   
   Make your recyclerview's viewholder aware its lifecycle by extending it with LifeAwareViewHolder class 
