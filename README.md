@@ -30,3 +30,4 @@ Step 2. Add the dependency
   2. Observe any livedata inside this Viewholder. 
   3. No need to call notifyAdapter about any change in the Itemview. 
   
+UseCase and Sample Video : https://stackoverflow.com/a/73843951/15754377
