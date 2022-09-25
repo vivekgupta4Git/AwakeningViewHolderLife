@@ -20,13 +20,13 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.vivekgupta4Git:AwakeningViewHolderLife:1.0.5'
+	        implementation 'com.github.vivekgupta4Git:AwakeningViewHolderLife:1.0.4'
 	}
   
   Make your recyclerview's viewholder aware its lifecycle by extending it with LifeAwareViewHolder class 
   Also, extend your recyclerview's adapter to AdapterWithLCViewHolder
   What perks do you get ?
-  1. Create Viewmodel for each ItemView of RecyclerView
-  2. Observe any livedata inside this Viewholder 
+  1. Create Viewmodel for each ItemView of RecyclerView (inside OnBindViewHolder only)
+  2. Observe any livedata inside this Viewholder. 
   3. No need to call notifyAdapter about any change in the Itemview. 
   
